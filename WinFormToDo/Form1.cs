@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace WinFormToDo
 {
     public partial class Form1 : Form
@@ -14,6 +16,19 @@ namespace WinFormToDo
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var date = DateTime.Parse(txtDueDateBox.Text);
+
+            // Where we handle the add event
+            
+            ToDo myTodo = new ToDo(txtTaskDescription.Text, DateTime.Parse(txtDueDateBox.Text));
+
+
+            MessageBox.Show(myTodo.ToString());
 
         }
     }
