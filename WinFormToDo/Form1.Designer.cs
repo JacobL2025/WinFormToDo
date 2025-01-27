@@ -49,11 +49,11 @@
             groupBox1.Controls.Add(lblDueDate);
             groupBox1.Controls.Add(lblTaskBoxLabel);
             groupBox1.Controls.Add(txtTaskDescription);
-            groupBox1.Location = new Point(10, 10);
+            groupBox1.Location = new Point(11, 11);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(689, 197);
+            groupBox1.Size = new Size(746, 210);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Task Form";
@@ -61,20 +61,21 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(399, 138);
+            btnClear.Location = new Point(432, 147);
             btnClear.Margin = new Padding(2);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(135, 42);
+            btnClear.Size = new Size(146, 45);
             btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(539, 138);
+            btnAdd.Location = new Point(584, 147);
             btnAdd.Margin = new Padding(2);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(135, 42);
+            btnAdd.Size = new Size(146, 45);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add To-Do";
             btnAdd.UseVisualStyleBackColor = true;
@@ -82,67 +83,67 @@
             // 
             // txtDueDateBox
             // 
-            txtDueDateBox.Location = new Point(119, 82);
+            txtDueDateBox.Location = new Point(129, 87);
             txtDueDateBox.Margin = new Padding(2);
             txtDueDateBox.Name = "txtDueDateBox";
             txtDueDateBox.PlaceholderText = "2025-01-20";
-            txtDueDateBox.Size = new Size(556, 35);
+            txtDueDateBox.Size = new Size(602, 39);
             txtDueDateBox.TabIndex = 3;
             // 
             // lblDueDate
             // 
             lblDueDate.AutoSize = true;
-            lblDueDate.Location = new Point(5, 84);
+            lblDueDate.Location = new Point(5, 90);
             lblDueDate.Margin = new Padding(2, 0, 2, 0);
             lblDueDate.Name = "lblDueDate";
-            lblDueDate.Size = new Size(101, 30);
+            lblDueDate.Size = new Size(115, 32);
             lblDueDate.TabIndex = 2;
             lblDueDate.Text = "Due Date";
             // 
             // lblTaskBoxLabel
             // 
             lblTaskBoxLabel.AutoSize = true;
-            lblTaskBoxLabel.Location = new Point(26, 36);
+            lblTaskBoxLabel.Location = new Point(28, 38);
             lblTaskBoxLabel.Margin = new Padding(2, 0, 2, 0);
             lblTaskBoxLabel.Name = "lblTaskBoxLabel";
-            lblTaskBoxLabel.Size = new Size(52, 30);
+            lblTaskBoxLabel.Size = new Size(58, 32);
             lblTaskBoxLabel.TabIndex = 1;
             lblTaskBoxLabel.Text = "Task";
             // 
             // txtTaskDescription
             // 
-            txtTaskDescription.Location = new Point(119, 32);
+            txtTaskDescription.Location = new Point(129, 34);
             txtTaskDescription.Margin = new Padding(2);
             txtTaskDescription.Name = "txtTaskDescription";
-            txtTaskDescription.Size = new Size(556, 35);
+            txtTaskDescription.Size = new Size(602, 39);
             txtTaskDescription.TabIndex = 0;
             // 
             // gbTaskList
             // 
             gbTaskList.Controls.Add(lvTasks);
-            gbTaskList.Location = new Point(14, 212);
+            gbTaskList.Location = new Point(15, 226);
             gbTaskList.Margin = new Padding(2);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Padding = new Padding(2);
-            gbTaskList.Size = new Size(684, 679);
+            gbTaskList.Size = new Size(741, 724);
             gbTaskList.TabIndex = 1;
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
             // lvTasks
             // 
-            lvTasks.Location = new Point(5, 34);
+            lvTasks.Location = new Point(5, 36);
             lvTasks.Margin = new Padding(2);
             lvTasks.Name = "lvTasks";
-            lvTasks.Size = new Size(680, 646);
+            lvTasks.Size = new Size(736, 689);
             lvTasks.TabIndex = 0;
             lvTasks.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(708, 901);
+            ClientSize = new Size(767, 961);
             Controls.Add(gbTaskList);
             Controls.Add(groupBox1);
             Margin = new Padding(2);
