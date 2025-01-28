@@ -19,9 +19,34 @@ namespace WinFormToDo
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void submitForm(object sender, EventArgs e)
         {
-            var date = DateTime.Parse(txtDueDateBox.Text);
+
+
+            if (Validators.IsEmptyText(txtTaskDescription) || txtTaskDescription.Text == null)
+            {
+                MessageBox.Show("Invalid Data. Please Try Again.");
+                return;
+            }
+
+            if (Validators.IsTextNull(txtTaskDescription))
+            {
+                MessageBox.Show("Description Needs To Be Created");
+                return;
+            }
+
+            if (Validators.IsEmptyText(txtDueDateBox))
+            {
+                MessageBox.Show("Missing A Due Date");
+                return;
+            }
+
+            if (Validators.IsValidDate(txtDueDateBox))
+            {
+                MessageBox.Show("Date is Incorrectly Formatted, Please Resubmit.");
+                return;
+            }
+
 
             // Where we handle the add event
 
@@ -31,7 +56,7 @@ namespace WinFormToDo
             MessageBox.Show(myTodo.ToString());
 
 
-            lvTasks.Items.Add(myTodo.ToString());
+            lbTaskList.Items.Add(myTodo.ToString());
 
 
             ClearForm();
@@ -40,7 +65,7 @@ namespace WinFormToDo
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-           ClearForm();
+            ClearForm();
             MessageBox.Show("Form Cleared");
         }
 
@@ -48,6 +73,14 @@ namespace WinFormToDo
         {
             txtTaskDescription.Clear();
             txtDueDateBox.Clear();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                submitForm(sender, e);
+            }
         }
     }
 }
