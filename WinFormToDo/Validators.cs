@@ -14,17 +14,17 @@ namespace WinFormToDo
             return control.Text == "";
         }
 
-        Public static bool IsTextNull(Control control)
+        public static bool IsTextNull(Control control)
         {
             return control.Text == null;
         }
 
-        Public static bool IsMinLength(Control control, int minLength)
+        public static bool IsMinLength(Control control, int minLength)
         {
             return control.Text.Length >= minLength;
         }
 
-        Public static bool IsValidDate(Control control)
+        public static bool IsValidDate(Control control)
         {
             DateTime Temp = DateTime.Now;
             return DateTime.TryParse(control.Text, out Temp);

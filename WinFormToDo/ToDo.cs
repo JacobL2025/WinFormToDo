@@ -13,6 +13,23 @@ namespace WinFormToDo
         public string TaskDescription { get; set; }
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
+
+        public string GetStatus()
+        {
+            string status = "";
+           
+            if (!IsDone)
+            {
+                status = "Status: Incomplete";
+               
+            }
+          
+            else
+            {
+                status = "status: Complete";
+            }
+            return status;
+        }
         public ToDo(String description, DateTime date, bool doneState = false)
         {
             ObjectCounter++;
@@ -24,7 +41,7 @@ namespace WinFormToDo
 
         public override string? ToString()
         {
-            return $"{Id} - {DueDate} - {TaskDescription}";
+            return $"{Id} - {DueDate} - {TaskDescription} - { GetStatus() }";
         }
     }
 }

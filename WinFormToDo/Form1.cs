@@ -4,9 +4,12 @@ namespace WinFormToDo
 {
     public partial class Form1 : Form
     {
+        private List<ToDo> TaskList { get; set; }
+
         public Form1()
         {
             InitializeComponent();
+            TaskList = new List<ToDo>();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -23,7 +26,7 @@ namespace WinFormToDo
         {
 
 
-            if (Validators.IsEmptyText(txtTaskDescription) || txtTaskDescription.Text == null)
+            if (Validators.IsEmptyText(txtTaskDescription))
             {
                 MessageBox.Show("Invalid Data. Please Try Again.");
                 return;
@@ -41,7 +44,7 @@ namespace WinFormToDo
                 return;
             }
 
-            if (Validators.IsValidDate(txtDueDateBox))
+            if (!Validators.IsValidDate(txtDueDateBox))
             {
                 MessageBox.Show("Date is Incorrectly Formatted, Please Resubmit.");
                 return;
@@ -52,15 +55,39 @@ namespace WinFormToDo
 
             ToDo myTodo = new ToDo(txtTaskDescription.Text, DateTime.Parse(txtDueDateBox.Text));
 
+            TaskList.Add(myTodo);
+
+            UpdateListBox();
 
             MessageBox.Show(myTodo.ToString());
 
 
-            lbTaskList.Items.Add(myTodo.ToString());
+            // lbTaskList.Items.Add(myTodo.ToString());
 
 
             ClearForm();
 
+        }
+
+        public void UpdateListBox()
+        {
+            //Clear the contents of the list box
+            lbTaskList.Items.Clear();
+
+            // Transform the list
+            var list = TaskList
+                .Where(t => t.IsDone == false)
+                .OrderBy(testc => testc.DueDate)
+                .ToList();
+
+            
+            // read in the new contents
+            for (int i = 0; i < list.Count; i++)
+            {
+                lbTaskList.Items.Add(list[i].ToString());
+            }
+
+            // clean up if required
         }
 
         private void btnClear_Click(object sender, EventArgs e)
