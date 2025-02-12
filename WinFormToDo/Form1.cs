@@ -56,6 +56,7 @@ namespace WinFormToDo
             ToDo myTodo = new ToDo(txtTaskDescription.Text, DateTime.Parse(txtDueDateBox.Text));
 
             TaskList.Add(myTodo);
+            fpTasks.Controls.Add(new TaskControl(myTodo));
 
             UpdateListBox();
 
@@ -72,7 +73,7 @@ namespace WinFormToDo
         public void UpdateListBox()
         {
             //Clear the contents of the list box
-            lbTaskList.Items.Clear();
+            // lbTaskList.Items.Clear();
 
             // Transform the list
             var list = TaskList
@@ -84,7 +85,7 @@ namespace WinFormToDo
             // read in the new contents
             for (int i = 0; i < list.Count; i++)
             {
-                lbTaskList.Items.Add(list[i].ToString());
+                // lbTaskList.Items.Add(list[i].ToString());
             }
 
             // clean up if required
@@ -110,39 +111,39 @@ namespace WinFormToDo
             }
         }
 
-        private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           // MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}");
-           int selectedIndex = lbTaskList.SelectedIndex;
-            string selectedItem = (string)lbTaskList.SelectedItem;
+//        private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
+//        {
+//           // MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}");
+//           // int selectedIndex = lbTaskList.SelectedIndex;
+//            // string selectedItem = (string)lbTaskList.SelectedItem;
 
            
-            if (selectedIndex == -1)
-            {
-                return;
-            }
+//            if (selectedIndex == -1)
+//            {
+//                return;
+//            }
 
-            if (selectedItem == null)
-            {
-                MessageBox.Show("No Item Selected at The Index");
-                return;
-            }
+//            if (selectedItem == null)
+//            {
+//                MessageBox.Show("No Item Selected at The Index");
+//                return;
+//            }
 
-            //String Format: # - 01-01-2025 - description - status: complete
+//            //String Format: # - 01-01-2025 - description - status: complete
 
-            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
+//            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
 
-            // Find the item in the list with the matching id, toggle it complete status
+//            // Find the item in the list with the matching id, toggle it complete status
 
-            var Todo = TaskList.Find(t => t.Id == id);
+//            var Todo = TaskList.Find(t => t.Id == id);
 
-            if (Todo != null)
-            {
-                Todo.IsDone = !Todo.IsDone;
+//            if (Todo != null)
+//            {
+//                Todo.IsDone = !Todo.IsDone;
 
-                UpdateListBox();
-            }
+//                UpdateListBox();
+//            }
 
-        }
+//        }
     }
 }

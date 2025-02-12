@@ -36,9 +36,8 @@
             lblTaskBoxLabel = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lbTaskList = new ListBox();
+            fpTasks = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
-            gbTaskList.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -122,7 +121,6 @@
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lbTaskList);
             gbTaskList.Location = new Point(15, 226);
             gbTaskList.Margin = new Padding(2);
             gbTaskList.Name = "gbTaskList";
@@ -132,20 +130,20 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lbTaskList
+            // fpTasks
             // 
-            lbTaskList.FormattingEnabled = true;
-            lbTaskList.Location = new Point(5, 37);
-            lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(737, 676);
-            lbTaskList.TabIndex = 0;
-            lbTaskList.SelectedIndexChanged += lbTaskList_SelectedIndexChanged;
+            fpTasks.AutoScroll = true;
+            fpTasks.Location = new Point(11, 263);
+            fpTasks.Name = "fpTasks";
+            fpTasks.Size = new Size(746, 686);
+            fpTasks.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(767, 961);
+            Controls.Add(fpTasks);
             Controls.Add(gbTaskList);
             Controls.Add(groupBox1);
             Margin = new Padding(2);
@@ -153,7 +151,6 @@
             Text = "To-Do App";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            gbTaskList.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -167,6 +164,6 @@
         private TextBox txtDueDateBox;
         private Label lblDueDate;
         private GroupBox gbTaskList;
-        private ListBox lbTaskList;
+        private FlowLayoutPanel fpTasks;
     }
 }
