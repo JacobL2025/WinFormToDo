@@ -30,5 +30,15 @@ namespace WinFormToDo
         {
             Dispose();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TaskControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
